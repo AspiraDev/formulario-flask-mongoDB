@@ -1,0 +1,95 @@
+{% include 'base.html' %}
+{% with messages= get_flashed_messages() %} 
+{% if messages %} 
+    <div class="alert alert-danger" role="alert"> 
+        {% for message in messages %} 
+            {{message}} 
+        {% endfor %} 
+    </div> 
+{% endif %} 
+
+{% endwith %}
+
+<style>
+    form{
+        text-align: -webkit-center;
+    }
+.form-group{
+    margin-bottom: 20px;
+}
+.form-control{
+    width: 370px;
+}
+    
+</style>
+<h1>Coloque suas Informações</h1> 
+<div class="container">
+<form method="post" action="/cadastrar" enctype="multipart/form-data style="background-color: transparent;">
+    <div class="form-row" >
+      <div class="form-group col-md-6" >
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" name='nome' id="nome" placeholder="Nome">
+      </div>
+
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" name='email' id="email" placeholder="exemplo@gmail.com">
+    </div>
+
+    <div class="form-group col-md-6">
+        <label for="senha">Senha</label>
+        <input type="password" class="form-control" name='senha' id="senha" placeholder="Senha">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="cidade">Cidade</label>
+        <input type="text" class="form-control" name='cidade' id="cidade" placeholder="São Paulo">
+      </div>
+
+
+      <div class="form-group col-md-4">
+        <label for="estado">Estado</label>
+        <select id="estado" name='estado' class="form-control">
+          <option selected>Escolha...</option>
+          <option>Acre</option>
+          <option>Alagoas</option>
+          <option>Amapá</option>
+          <option>Amazonas</option>
+          <option>Bahia</option>
+          <option>Ceará</option>
+          <option>Distrito Federal</option>
+          <option>Espírito Santo</option>
+          <option>Goiás</option>
+          <option>Maranhão</option>
+          <option>Mato Grosso</option>
+          <option>Mato Grosso do Sul</option>
+          <option>Minas Gerais</option>
+          <option>Pará</option>
+          <option">Paraíba</option>
+          <option>Paraná</option>
+          <option>Pernambuco</option>
+          <option>Piauí</option>
+          <option>Rio de Janeiro</option>
+          <option>Rio Grande do Norte</option>
+          <option>Rio Grande do Sul</option>
+          <option>Rondônia</option>
+          <option>Roraima</option>
+          <option>Santa Catarina</option>
+          <option>São Paulo</option>
+          <option>Sergipe</option>
+          <option>Tocantins</option>
+        </select>
+      </div>
+      <div class="form-group"> 
+        <button type="submit" class="btn btn-warning">Cadastrar</button>
+        <a href="/" class="btn btn-primary">Voltar</a> 
+    </div>
+
+  </form>
+</div>
+<br><br>
+
+{% include 'footer.html' %}
